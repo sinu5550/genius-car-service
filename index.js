@@ -28,7 +28,7 @@ function verifyJWT(req, res, next) {
 }
 
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.vwx9p.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const uri = "mongodb+srv://geniusCar:kvFnY1udkc1L4J6g@cluster0.w9pn3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 async function run() {
@@ -88,8 +88,8 @@ async function run() {
                 const orders = await cursor.toArray();
                 res.send(orders);
             }
-            else{
-                res.status(403).send({message: 'forbidden access'})
+            else {
+                res.status(403).send({ message: 'forbidden access' })
             }
         })
 
@@ -111,7 +111,7 @@ app.get('/', (req, res) => {
     res.send('Running Genius Server');
 });
 
-app.get('/hero', (req, res) =>{
+app.get('/hero', (req, res) => {
     res.send('Hero meets hero ku')
 })
 
